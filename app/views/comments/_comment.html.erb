@@ -1,0 +1,16 @@
+<p>
+    <b><%= comment.commenter %></b> <b> wrote:</b>
+</p>
+ 
+<p>
+  <b></b>
+  <%= comment.body %>
+</p>
+ 
+<p>
+	<% if can? :destroy, comment  %>
+  		<%= link_to 'Destroy Comment', [comment.picture, comment],
+               :confirm => 'Are you sure?',
+               :method => :delete %>
+    <% end %>
+</p>

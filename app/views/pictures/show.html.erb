@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @picture.name %>
+</p>
+
+<p>
+  <%= image_tag(@picture.picture_url, :width => 600) if @picture.picture.present? %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @picture.description %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%= join_tags(@picture) %>
+</p>
+
+<h3>Comments</h3>
+<%= render @picture.comments %>
+
+<% if can? :create, @tempcomment  %>
+<p>Add a comment:</p>
+<%= render "comments/form" %>
+<% end %>
+
+<p><%#= current_user.email %></p>
+
+<br />
+
+<%= link_to 'Edit', edit_picture_path(@picture) %> |
+<%= link_to 'Back to Pictures', pictures_path %>

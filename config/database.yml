@@ -25,7 +25,7 @@ production:
   #timeout: 5000
   adapter: postgresql
   encoding: unicode
-  database: blog_development
+  database: pictures_development
   pool: 5
-  username: blog
+  username: pictures
   password:

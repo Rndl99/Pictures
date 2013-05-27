@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
 	private
 	def setup_role
   		if self.role_ids.empty?
-    	self.role_ids = [2]
+    	self.role_ids = [1]
 		end
 	end
 
